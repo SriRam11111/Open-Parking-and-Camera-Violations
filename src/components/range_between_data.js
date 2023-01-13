@@ -4,7 +4,8 @@ import axios from 'axios';
 import DataTable from 'react-data-table-component';
 function Range() {
   const [data,setData]=useState([])
-  const [search,setSearch]=useState("")
+  const [price1,setprice1]=useState("")
+  const [price2,setprice2]=useState("")
   const [filterdata,setFilterdata]=useState([])
   const getData = async () =>{
     try{
@@ -50,18 +51,21 @@ function Range() {
   },[])
 
 
-  // to filter search data whenever search changes useeffect hook will be effected
+  // to filter price data whenever price changes useeffect hook will be effected
  useEffect(()=>{
-  console.log("search update useeffect")
+  // console.log("price update useeffect")
+    
+    
   const result=data.filter(rowdata=>{
-    return rowdata.plate.toLowerCase().match(search.toLowerCase()) || rowdata.violation.toLowerCase().match(search.toLowerCase());
+    // console.log("any data",typeof(rowdata.fine_amount),rowdata.fine_amount)
+    // console.log("date selected",typeof(price1),price1)
+    return parseInt(rowdata.fine_amount)>=(parseInt(price1)) && parseInt(rowdata.fine_amount)<=(parseInt(price2)) ;
   });
   setFilterdata(result)
- },[search])
+ },[price1,price2])
 
   return(
     <> 
-    {console.log("any data",data)}
     <DataTable title="Open Parking and Camera Violations"
      columns={columns} 
      data={filterdata} 
@@ -75,11 +79,19 @@ function Range() {
       <button className='export-btn'>export</button> }
     subHeader
     subHeaderComponent={
-      <input type="text" placeholder="search here" className="input-search"
-      value={search}
-      onChange={(e)=>setSearch(e.target.value)}
+        <>
+      <input type="number" placeholder="minimum fine" className="input-price"
+      value={price1}
+      onChange={(e)=>setprice1(e.target.value)}
       />
+      <input type="number" placeholder="maximum fine" className="input-price"
+      value={price2}
+      onChange={(e)=>setprice2(e.target.value)}
+      />
+      </>
+     
     }
+      
     subHeaderAlign="center"
       />
     </>

@@ -13,7 +13,7 @@ function Filter() {
         //   .then(result=>setData(result))
           .catch(error=>console.log(error));
       },[])
-    useEffect(()=>{
+    useEffect(()=>{ 
         setFilterdata(data)
     },[search])
     console.log("search update 123 useeffecl data",data )
@@ -38,6 +38,7 @@ function Filter() {
         {
           name:"fine_amount",
           selector:(row)=>row.fine_amount,
+          sortable:true
         },
         {
           name:"violatiiiion",
