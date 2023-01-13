@@ -1,25 +1,21 @@
 import './App.css';
-import axios from "axios";
-import data from '../src/data/data.json'
+import Chartdata from './components/chartdata';
+import Barchart from './components/barchart';
 import Show_Data from './components/show_data';
-import { useEffect, useState } from 'react';
+import Filter from './components/filter';
+import SearchDropdown from './components/dropdownselection';
+import Maindata from './components/sravani';
+import Specialselection from './components/specialselection';
 function App() {
-  const[Data,SetData]=useState([])
-  const getData = async () =>{
-    try{
-      const response =await axios.get("https://data.cityofnewyork.us/resource/nc67-uf89.json");
-      SetData(response.data);
-    }catch(error){
-      console.log(error);
-    }
-  };
-
-  useEffect(()=>{
-    getData();
-  },[])
+  
   return (
     <div >
-       <Show_Data  data={data}/>
+        {/* <Show_Data  />
+       <Chartdata/> 
+        <Filter/> 
+       <SearchDropdown/> */}
+       <Specialselection/> v
+       
     </div>
   );
 }
