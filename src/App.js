@@ -5,6 +5,7 @@ import SearchDropdown from './components/dropdownselection';
 import Maindata from './components/sravani';
 import Specialselection from './components/specialselection';
 import Range from './components/range_between_data';
+import GetDataPage from './components/withoutpackages/getdata';
 function App() {
   
   return (
@@ -14,8 +15,8 @@ function App() {
         <Filter/> 
        <SearchDropdown/> */}
        {/* <Specialselection/> */}
-       <Range/>
-       
+       {/* <Range/> */}
+       <GetDataPage/>
     </div>
   );
 }
