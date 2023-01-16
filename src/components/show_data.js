@@ -52,11 +52,10 @@ function Show_Data() {
 
   // to filter search data whenever search changes useeffect hook will be effected
  useEffect(()=>{
-  console.log("search update useeffect")
   const result=data.filter(rowdata=>{
-    console.log("plate",rowdata.plate)
-    console.log("violation",rowdata.violation)
-    console.log("rowdata",rowdata)
+    // console.log("plate",rowdata.plate)
+    // console.log("violation",rowdata.violation)
+    // console.log("rowdata",rowdata)
     if(rowdata.plate && rowdata.violation ){
     return rowdata.plate.toLowerCase().match(search.toLowerCase()) || rowdata.violation.toLowerCase().match(search.toLowerCase());}
     

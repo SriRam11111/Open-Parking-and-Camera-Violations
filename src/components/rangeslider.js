@@ -1,5 +1,5 @@
 // import React from 'react'
-// import {Slider} from '@material-ui/core'
+// import { Slider } from '@material-ui/core';
 // function Rangeslider() {
 //   return (
 //     <div>

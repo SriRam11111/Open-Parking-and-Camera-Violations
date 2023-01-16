@@ -29,3 +29,13 @@ td {
 tbody:hover{
     background-color: lightgrey;
 }
+
+.input-search_tabledata{
+
+	color:black;
+	padding:1% 5% 1% 2%;
+	margin-left:40%;
+	border-radius:12px;
+	align-self:center;
+
+}

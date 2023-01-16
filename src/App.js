@@ -11,12 +11,13 @@ function App() {
   
   return (
     <div >
-         <Show_Data  />
+         {/* <Show_Data  /> */}
         {/* <Filter/>  */}
        {/* <SearchDropdown/> */}
        {/* <Specialselection/> */}
        {/* <Range/> */}
-       {/* <GetDataPage/> */}
+       <GetDataPage/> 
+       {/* <Rangeslider/> */}
     </div>
   );
 }
