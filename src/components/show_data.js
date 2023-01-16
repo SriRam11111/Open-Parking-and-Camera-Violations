@@ -54,7 +54,12 @@ function Show_Data() {
  useEffect(()=>{
   console.log("search update useeffect")
   const result=data.filter(rowdata=>{
-    return rowdata.plate.toLowerCase().match(search.toLowerCase()) || rowdata.violation.toLowerCase().match(search.toLowerCase());
+    console.log("plate",rowdata.plate)
+    console.log("violation",rowdata.violation)
+    console.log("rowdata",rowdata)
+    if(rowdata.plate && rowdata.violation ){
+    return rowdata.plate.toLowerCase().match(search.toLowerCase()) || rowdata.violation.toLowerCase().match(search.toLowerCase());}
+    
   });
   setFilterdata(result)
  },[search])

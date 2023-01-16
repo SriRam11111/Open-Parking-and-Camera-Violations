@@ -6,17 +6,17 @@ import Maindata from './components/sravani';
 import Specialselection from './components/specialselection';
 import Range from './components/range_between_data';
 import GetDataPage from './components/withoutpackages/getdata';
+import Rangeslider from './components/rangeslider';
 function App() {
   
   return (
     <div >
-        {/* <Show_Data  />
-       <Chartdata/> 
-        <Filter/> 
-       <SearchDropdown/> */}
+         <Show_Data  />
+        {/* <Filter/>  */}
+       {/* <SearchDropdown/> */}
        {/* <Specialselection/> */}
        {/* <Range/> */}
-       <GetDataPage/>
+       {/* <GetDataPage/> */}
     </div>
   );
 }
